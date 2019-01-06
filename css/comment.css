@@ -100,7 +100,7 @@ ul{
    transition: all 1s;
    height: 2000px;
    padding-top: 50px;
-   background-color: pink;
+   /* background-color: pink; */
 
 }
 .lt_right.hidemenu {
