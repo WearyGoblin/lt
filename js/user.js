@@ -45,7 +45,9 @@ $(function(){
         $("tbody").on("click",".btn",function(){
             $("#usermodel").modal("show");
             currentid = $(this).parent().data("id");
-            isDelete = $(this).hasClass("btn-danger") ? 0 : 1;
+            isDelete = $(this).hasClass("btn-danger") ? 0 : 1 ;
+            console.log(currentid);
+            
 
         });
         $("#mo_confirm").click(function(){
@@ -58,6 +60,8 @@ $(function(){
                 },
                 dataType:"json",
                 success:function(info){
+                    console.log(info);
+                    
                         if(info.success){
                             $("#usermodel").modal("hide");
                             render();
