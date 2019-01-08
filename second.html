@@ -79,11 +79,11 @@
 
     </div>
 
-     <!-- 添加模态框 -->
-     <div class="modal fade" id="sec-modal" tabindex="-1">
-            <div class="modal-dialog modal-sm">
-                <div class="modal-content">
-                    <form id="form">
+    <!-- 添加模态框 -->
+    <div class="modal fade" id="sec-modal" tabindex="-1">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <form id="form">
                     <!-- 头 -->
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal">&times;</span></button>
@@ -91,39 +91,44 @@
                     </div>
                     <!-- 中 -->
                     <div class="modal-body">
-                            <div class="form-group">
-                                <div class="dropdown">
-                                    <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
-                                            <span id="dropdownText">请选择一级分类</span>
-                                            <span class="caret"></span>
+                        <div class="form-group">
+                            <div class="dropdown">
+                                <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+                                    <span id="dropdownText">请选择一级分类</span>
+                                    <span class="caret"></span>
 
-                                    </button>
-                                    <ul class="dropdown-menu">
-                                            <!-- 挖个坑 -->
-                                            <!-- <a href="#">11</a> -->
-                                          </ul>
-                                </div>
-                                  </div>
-                                  <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="请输入二级分类">
-                                  </div>
-                                  <div class="form-group">
-                                    <label for="fileupload" class="btn btn-default">上传图片</label>
-                                    <input type="file" id="fileupload" name="pic1" style="display:none;" data-url="/category/addSecondCategoryPic">
-                                  </div>
-                                <div class="form-group" id="imgbox">
-                                    <img style="width:100px;" src="./images/none.png" alt="">
-                                </div>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <!-- 挖个坑 -->
+                                    <!-- <a href="#">11</a> -->
+                                </ul>
+                                <!-- 准备隐藏域 专门用于提交 -->
+                                <input type="hidden" name="categoryId">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="brandName" placeholder="请输入二级分类">
+                        </div>
+                        <div class="form-group">
+                            <label for="fileupload" class="btn btn-default">上传图片</label>
+                            <input type="file" id="fileupload" name="pic1" style="display:none;" data-url="/category/addSecondCategoryPic">
+                        </div>
+                        <div class="form-group" id="imgbox">
+                            <img style="width:100px;" src="./images/none.png" alt="">
+                            <!-- 准备隐藏域 专门用于提交 -->
+                            <input type="hidden" name="brandLogo">
+                        </div>
+
                     </div>
                     <!-- 底 -->
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-                        <button type="button" class="btn btn-primary" id="addbtn">添加</button>
+                        <button type="submit" class="btn btn-primary" id="addbtn">添加</button>
                     </div>
                 </form>
-                </div>
             </div>
         </div>
+    </div>
     <!-- 模态框 -->
     <div class="modal fade" id="myModal" tabindex="-1">
         <div class="modal-dialog modal-sm">
@@ -155,9 +160,9 @@
         {{/each}}
 
     </script>
-    <script type="text/html" id ="btnadd">
+    <script type="text/html" id="btnadd">
         {{each rows v i}}
-            <li><a href="#">{{v.categoryName}}</a></li>
+            <li><a href="#" data-id="{{v.id}}">{{v.categoryName}}</a></li>
          {{/each}}
     </script>
     <script src="./lib/jquery/jquery.min.js"></script>
